@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}									% Festlegen des Encodings
 \usepackage[ngerman]{babel}                                 % deutsche Sprache
 \usepackage[T1]{fontenc}                                    % Unterstützung für Umlaute mit Fonts
+\usepackage[autostyle=true,german=quotes]{csquotes}			% Wird für den Befehl \enquote benötigt
 
 \begin{document}
 	\title{The Serial Safety Net:\\ Efficient Concurrency Control on Modern Hardware}
@@ -23,4 +24,9 @@
 	\acmDOI{}
 	
 	\maketitle
+	
+	\input{sec/einleitung}
+	
+	\bibliographystyle{ACM-Reference-Format}
+	\bibliography{literatur}
 \end{document}
