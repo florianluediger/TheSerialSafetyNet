@@ -38,6 +38,10 @@ Nach dem Commit beider Transaktionen wäre nun immer noch die Hälfte aller Kuge
 \textbf{Serializable Snapshot Isolation (SSI):} Durch den geschickten Einsatz von Sperren, wird das Auftreten der vorhergehen vorgestellten Problematik bei der Snapshot Isolation verhindert.
 Somit sind bei der Verwendung dieses Verfahrens keinerlei Abhängigkeitszyklen möglich.
 
+\textbf{Optimistic Concurrency Control (OCC):} Zu guter Letzt soll noch das üblicherweise in Silo verwendete CC-Verfahren untersucht werden, welches eine Variante der Optimistic Concurrency Control darstellt, weshalb es im Folgenden als OCC bezeichnet wird.
+Dieses Verfahren sichert ebenfalls die Serialisierbarkeit des Plans und verspricht einen hohen Durchsatz sowie gute Skalierbarkeit.
+Weitere Informationen zu Optimistic Concurrency Control und der in Silo implementierten Variante finden sich in \cite{Kung:1981} und \cite{Tu:2013}.
+
 \subsection{Der TPC-C Benchmark}
 Um die Geschwindigkeitsvorteile des Serial Safety Nets gegenüber den klassischen Verfahren quantifizieren zu können, wurde der TPC-C Benchmark verwendet.\cite{tpcc}
 Es handelt sich dabei um einen Online-Transaction-Processing(OLTP)-Benchmark, welcher mehrere Transaktionstypen und eine komplexe Datenbank bietet.
