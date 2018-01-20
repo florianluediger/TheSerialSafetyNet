@@ -6,6 +6,7 @@ Besonders interessant sind hierbei die verglichenen Concurrency-Control-Verfahre
 Für die Bewertung des Serial Safety Nets wurde dieses auf die Concurrency-Control-Verfahren Read Committed und Snapshot Isolation angewendet, welche beide normalerweise keine Serialisierbarkeit gewährleisten.
 Verglichen wurden diese dann mit der ursprünglichen Implementierung der Snapshot Isolation und der Optimistic-Concurrency-Control, welche beide keine Serialisierbarkeit sichern.
 Außerdem wurde ein Vergleich mit der Serializable Snapshot Isolation durchgeführt, welche vorher dazu verwendet wurde die Serialisierbarkeit bei der Verwendung von Snapshot Isolation zu gewährleisten.
+All diese Systeme wurden von den Autoren in das Online-Transaction-Processing(OLTP)-System Silo eingebaut und auf dieser Basis verglichen.
 Nachfolgend werden einige Hinweise zu den verwendeten Verfahren erläutert, welche für das Verständnis der Evaluation erforderlich sind.
 
 \textbf{Read Committed (RC):} Dieses Verfahren ist in Form eines Isolationslevels sehr bekannt und weit verbreitet, es finden sich daher auch viele Informationen dazu wie beispielsweise in \cite{Berenson:1995}.
@@ -39,6 +40,7 @@ Somit sind bei der Verwendung dieses Verfahrens keinerlei Abhängigkeitszyklen m
 
 \subsection{Der TPC-C Benchmark}
 Um die Geschwindigkeitsvorteile des Serial Safety Nets gegenüber den klassischen Verfahren quantifizieren zu können, wurde der TPC-C Benchmark verwendet.\cite{tpcc}
-Es handelt sich dabei um einen Online Transaction Processing (OLTP) Benchmark, welcher mehrere Transaktionstypen und eine komplexe Datenbank bietet.
+Es handelt sich dabei um einen Online-Transaction-Processing(OLTP)-Benchmark, welcher mehrere Transaktionstypen und eine komplexe Datenbank bietet.
 Die insgesamt fünf verschiedenen Transaktionsarten modellieren dabei die Alltagsaktivitäten eines Großhandels, was das Verwalten und Ausliefern von Bestellungen, das Überwachen von Zahlungen, das Abfragen des Bestellstatus und das Beobachten des Warenbestandes umfasst.
 Damit stellt dieser Benchmark eine hervorragende Simulation von stark verbreiteten Anwendungsgebieten dar, welche die Performanz des getesteten Systems in vielen Alltagssituationen einschätzen lässt.
+Obwohl in dem Artikel, auf den sich diese Ausarbeitung bezieht \cite{Wang:2015} lediglich der TPC-C Benchmark betrachtet wird, ist hier anzumerken, dass die Autoren in ihrem weiterführenden Artikel \cite{WangJFP16} außerdem den TPC-CC und TPC-EH Benchmark verwendet haben um die Ergebnisse zu bestätigen.
