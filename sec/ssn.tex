@@ -28,7 +28,7 @@ Dazu lassen sich zwei verschiedene Typen von Abhängigkeiten wie folgt definiere
 \end{Definition}
 
 \begin{Definition}
-	Eine reflexive, transitive \textcolor{my-green}{Back-Edge} $T\xleftarrow{b*} U$ bezeichnet eine Verbindung, bei der $T$ von $U$ ausschließlich über Back-Edges erreichbar ist.
+	Eine \textcolor{my-green}{reflexive, transitive Back-Edge} $T\xleftarrow{b*} U$ bezeichnet eine Verbindung, bei der $T$ von $U$ ausschließlich über Back-Edges erreichbar ist.
 \end{Definition}
 
 \begin{figure}
@@ -44,16 +44,16 @@ Die Umsetzung des Serial Safety Nets erfordert das Erfassen der folgenden drei Z
 Die vorgestellten Zeitstempel sind ebenfalls in Abbildung \ref{fig:back_forward} für die Transaktion $T2$ eingezeichnet.
 
 \begin{Definition}
-	\textcolor{my-red}{$c(T)$} bezeichnet die Commit-Zeit der Transaktion $T$
+	\textcolor{my-red}{$c(T)$} bezeichnet den Commit-Zeitpunkt der Transaktion $T$
 \end{Definition}
 
 \begin{Definition}
-	\textcolor{my-green}{$\pi (T)$} bezeichnet die Commit-Zeit des ältesten Nachfolgers, der durch Back-Edges erreichbar ist:\\		
+	\textcolor{my-green}{$\pi (T)$} bezeichnet den Commit-Zeitpunkt des ältesten Nachfolgers, der durch Back-Edges erreichbar ist:\\		
 	$\pi (T)=\min (c(U):T\xleftarrow{b*}U)=\min (\{\pi (U):T\xleftarrow{b}U\}\cup \{c(T)\})$
 \end{Definition}
 
 \begin{Definition}
-	\textcolor{my-blue}{$\eta (T)$} bezeichnet die Commit-Zeit des zuletzt committeten Vorgängers von $T$:\\
+	\textcolor{my-blue}{$\eta (T)$} bezeichnet den Commit-Zeitpunkt des zuletzt committeten Vorgängers von $T$:\\
 	$\eta (T) = \max (\{c(U):U\xleftarrow{f} T\}\cup \{-\infty \})$
 \end{Definition}
 
@@ -74,7 +74,7 @@ Damit wäre der Abhängigkeitszyklus entstanden und der Plan nicht serialisierba
 
 Um die Umsetzung des Serial Safety Nets einfacher und performanter zu gestalten, lässt sich die Ungleichung \ref{eq:ausschlussfenster_lang} noch weiter vereinfachen.
 Zum einen müssen nur Vorgänger betrachtet werden, welche vor $T$ committet wurden, da ansonsten der zweite Teil der Ungleichung automatisch nicht erfüllt wäre.
-Dies eröffnet die Freiheit das Überprüfen des Ausschlussfensters erst zum Commit-Zeitpunkt der betrachteten Transaktion zu überprüfen.
+Dies eröffnet die Freiheit das Überprüfen des Ausschlussfensters erst zum Commit-Zeitpunkt der betrachteten Transaktion zu durchzuführen.
 
 Außerdem wird nur der Vorgänger von $T$ betrachtet, dessen Commit-Zeitpunkt am spätesten ist, da dieser maßgebend für das Erfüllen des ersten Teils der Ungleichung ist.
 Wie vorher beschrieben wird die Commit-Zeit des zuletzt committeten Vorgängers von $T$ mit \textcolor{my-blue}{$\eta (T)$} bezeichnet, wodurch die Ungleichung \ref{eq:ausschlussfenster_lang} folgendermaßen vereinfacht wird.
@@ -85,3 +85,8 @@ Wie vorher beschrieben wird die Commit-Zeit des zuletzt committeten Vorgängers 
 \end{equation}
 
 Wird diese Bedingung auf das in Abbildung \ref{fig:back_forward} beschriebene Beispiel angewendet, wird deutlich, dass die Ungleichung für Transaktion $T2$ erfüllt ist und somit eine Verletzung des Ausschlussfensters erkannt wird.
+
+Eine weitere hervorragende Eigenschaft des Serial Safety Nets ist die Möglichkeit des sogenannten \textbf{Safe Retry}.
+Wenn eine Transaktion aufgrund einer Verletzung des Ausschlussfensters abgebrochen werden muss, so ist es durch diese Eigenschaft möglich dieselbe Transaktion direkt zu wiederholen, ohne dass derselbe Konflikt erneut auftreten kann.
+Als Beispiel sei dazu angenommen, dass die Transaktion $T$ wegen einer Ausschlussfensterverletzung von Transaktion $U$ abgebrochen werden muss.
+Bei erneutem Durchführen der Transaktion als $T'$ kann dieselbe Verletzung durch $U$ nicht auftreten, da der Commit-Zeitpunkt von $U$ vor dem Anfang der Transaktion $T'$ liegt und somit nach \ref{eq:ausschlussfenster_lang} keine Verletzung zu befürchten ist.
