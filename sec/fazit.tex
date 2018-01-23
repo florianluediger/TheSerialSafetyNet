@@ -1,2 +1,9 @@
 \section{Fazit}
 \label{sec:fazit}
+
+Das Verfahren \enquote{The Serial Safety Net} verwendet hoch performante Concurrency Control Verfahren und stellt für diese die Serialisierbarkeit sicher.
+Dies geschieht ohne einen besonders großen Overhead zu verursachen und führt damit zu einer hohen Performanz, wobei allerdings keinerlei Anomalien abgesehen von Phantomen entstehen können.
+Die Effektivität und Skalierbarkeit in realen Systemen wurde mithilfe des TPC-C Benchmarks verifiziert, wodurch es für moderne OLTP-Anwendungen bestens geeignet sein sollte.
+Außerdem ist das Verfahren unkompliziert zu implementieren, worauf in \cite{Wang:2015} genauer eingegangen wird, und somit wenig anfällig für Fehler, weshalb es als ein sicheres Verfahren gelten kann.
+
+Das Serial Safety Net bietet insgesamt weniger Tranaktionsabbrüche, eine höhere Robustheit gegenüber dem Wiederholen von Transaktionen und ein besseres Verhalten für schreibintensive Aufgabenbereiche als die verglichenen Verfahren, wodurch einem Einsatz in realen Systemen nichts mehr im Weg steht.
