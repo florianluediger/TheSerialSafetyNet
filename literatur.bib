@@ -1,63 +1,73 @@
 @inproceedings{Wang:2015,
- author = {Wang, Tianzheng and Johnson, Ryan and Fekete, Alan and Pandis, Ippokratis},
- title = {The Serial Safety Net: Efficient Concurrency Control on Modern Hardware},
- booktitle = {Proceedings of the 11th International Workshop on Data Management on New Hardware},
- series = {DaMoN'15},
- year = {2015},
- isbn = {978-1-4503-3638-3},
- location = {Melbourne, VIC, Australia},
- pages = {8:1--8:8},
- articleno = {8},
- numpages = {8},
- url = {http://doi.acm.org/10.1145/2771937.2771949},
- doi = {10.1145/2771937.2771949},
- acmid = {2771949},
- publisher = {ACM},
- address = {New York, NY, USA},
+	author = {Wang, Tianzheng 
+	and Johnson, Ryan 
+	and Fekete, Alan 
+	and Pandis, Ippokratis},
+	title = {The Serial Safety Net: Efficient Concurrency Control on Modern Hardware},
+	booktitle = {Proceedings of the 11th International Workshop on Data Management on New Hardware},
+	year = {2015},
+	doi = {10.1145/2771937.2771949},
+	publisher = {ACM},
+}
+
+@inproceedings{Adya:2000, 
+	author={Adya, Atul 
+	and Liskov, Barbara
+	and O'Neil, Patrick},
+	booktitle={Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073)}, 
+	title={Generalized isolation level definitions},
+	year={2000},
+	doi={10.1109/ICDE.2000.839388},
+}
+
+@inproceedings{Tu:2013,
+	author = {Tu, Stephen 
+	and Zheng, Wenting 
+	and Kohler, Eddie 
+	and Liskov, Barbara 
+	and Madden, Samuel},
+	title = {Speedy Transactions in Multicore In-memory Databases},
+	booktitle = {Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles},
+	year = {2013},
+	doi = {10.1145/2517349.2522713},
+	publisher = {ACM},
 }
 
 @techreport{Berenson:1995,
-	author = {Berenson, Hal and Bernstein, Phil and Gray, Jim and Melton, Jim and O'Neil, Elizabeth and O'Neil, Patrick},
+	author = {Berenson, Hal 
+	and Bernstein, Phil 
+	and Gray, Jim 
+	and Melton, Jim 
+	and O'Neil, Elizabeth 
+	and O'Neil, Patrick},
 	title = {A Critique of ANSI SQL Isolation Levels},
-	booktitle = {},
 	year = {1995},
-	month = {June},
 	publisher = {Association for Computing Machinery, Inc.},
-	url = {https://www.microsoft.com/en-us/research/publication/a-critique-of-ansi-sql-isolation-levels/},
+	doi = {10.1145/223784.223785},
 }
 
 @article{WangJFP16,
-	author    = {Tianzheng Wang and
-	Ryan Johnson and
-	Alan Fekete and
-	Ippokratis Pandis},
+	author    = {Wang, Tianzheng
+	and Johnson, Ryan
+	and Fekete, Alan
+	and Pandis, Ippokratis},
 	title     = {Efficiently making (almost) any concurrency control mechanism serializable},
-	journal   = {CoRR},
-	volume    = {abs/1605.04292},
 	year      = {2016},
-	url       = {http://arxiv.org/abs/1605.04292},
-	archivePrefix = {arXiv},
-	eprint    = {1605.04292},
-	timestamp = {Sat, 30 Dec 2017 11:46:44 +0100},
-	biburl    = {http://dblp.org/rec/bib/journals/corr/WangJFP16},
-	bibsource = {dblp computer science bibliography, http://dblp.org}
+	doi       = {10.1007/s00778-017-0463-8},
 }
 
-@INPROCEEDINGS{Adya:2000, 
-	author={A. Adya and B. Liskov and P. O'Neil}, 
-	booktitle={Proceedings of 16th International Conference on Data Engineering (Cat. No.00CB37073)}, 
-	title={Generalized isolation level definitions}, 
-	year={2000}, 
-	volume={}, 
-	number={}, 
-	pages={67-78}, 
-	keywords={ANSI standards;concurrency control;data integrity;database management systems;ANSI standard;commercial databases;consistency;generalized isolation level definitions;locking;multi-version concurrency control schemes;optimistic concurrency control schemes;performance;predicate handling;specifications;ANSI standards;Computer science;Concurrent computing;Databases;Ear;History;ISO standards;Microwave integrated circuits;Programming profession;Proposals}, 
-	doi={10.1109/ICDE.2000.839388}, 
-	ISSN={1063-6382}, 
-	month={},}
+@article{Kung:1981,
+	author = {Kung, H. T. 
+	and Robinson, John T.},
+	title = {On Optimistic Methods for Concurrency Control},
+	journal = {ACM Trans. Database Syst.},
+	year = {1981},
+	doi = {10.1145/319566.319567},
+	publisher = {ACM},
+}
 
 @online{write_skew,
-	author={Craig Freedman},
+	author={Freedman, Craig},
 	year={2007},
 	title={Serializable vs. Snapshot Isolation Level},
 	url={https://blogs.msdn.microsoft.com/craigfr/2007/05/16/serializable-vs-snapshot-isolation-level/},
@@ -68,41 +78,4 @@
 	title={TPC-C is an On-Line Transaction Processing Benchmark}
 	url={http://www.tpc.org/tpcc/},
 	urldate={2018-01-20}
-}
-
-@article{Kung:1981,
-	author = {Kung, H. T. and Robinson, John T.},
-	title = {On Optimistic Methods for Concurrency Control},
-	journal = {ACM Trans. Database Syst.},
-	issue_date = {June 1981},
-	volume = {6},
-	number = {2},
-	month = jun,
-	year = {1981},
-	issn = {0362-5915},
-	pages = {213--226},
-	numpages = {14},
-	url = {http://doi.acm.org/10.1145/319566.319567},
-	doi = {10.1145/319566.319567},
-	acmid = {319567},
-	publisher = {ACM},
-	address = {New York, NY, USA},
-	keywords = {concurrency controls, databases, transaction processing},
-}
-
-@inproceedings{Tu:2013,
-	author = {Tu, Stephen and Zheng, Wenting and Kohler, Eddie and Liskov, Barbara and Madden, Samuel},
-	title = {Speedy Transactions in Multicore In-memory Databases},
-	booktitle = {Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles},
-	series = {SOSP '13},
-	year = {2013},
-	isbn = {978-1-4503-2388-8},
-	location = {Farminton, Pennsylvania},
-	pages = {18--32},
-	numpages = {15},
-	url = {http://doi.acm.org/10.1145/2517349.2522713},
-	doi = {10.1145/2517349.2522713},
-	acmid = {2522713},
-	publisher = {ACM},
-	address = {New York, NY, USA},
 }
