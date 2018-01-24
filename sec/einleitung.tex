@@ -2,7 +2,8 @@
 \label{sec:einleitung}
 
 In diesem Dokument wird das in der Veröffentlichung \enquote{The Serial Safety Net: Efficient Concurrency Control on Modern Hardware} von Wang et al. \cite{Wang:2015} vorgestellte Verfahren zur Sicherstellung der Serialisierbarkeit von Transaktionsplänen erläutert.
-Dabei werden bestehende Verfahren für Concurrency-Control(CC) wie beispielsweise Snapshot-Isolation(SI), Read-Committed(RC) oder Read-Committed mit Locks(RCL) so erweitert, dass diese die Serialisierbarkeit der entstehenden Pläne gewährleisten.
+Dabei werden bestehende Verfahren für das Verwalten nebenläufiger Zugriffe auf eine Datenbank, allgemein als Concurrency-Control(CC) bekannt, so erweitert, dass diese die Serialisierbarkeit der entstehenden Pläne gewährleisten.
+Untersuchte Verfahren sind dabei beispielsweise Snapshot-Isolation(SI), Read-Committed(RC) oder Read-Committed mit Locks(RCL).
 
 Der Vorteil des Serial Safety Nets(SSN) gegenüber klassischen Verfahren, wie dem Zwei-Phasen-Sperrprotokoll(2PL) oder der Serializable-Snapshot-Isolation(SSI), besteht darin, dass eine bessere Nebenläufigkeit von Transaktionen ermöglicht wird, wodurch der Durchsatz des gesamten Systems massiv gesteigert wird.
 
